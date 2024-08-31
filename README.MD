@@ -92,4 +92,5 @@ Realize o fork do repositorio e habilite o live share na sua IDE favorita
 ## Contribuição
 
 Luan Oliveira (código original)
+
 Johnny Alysson
