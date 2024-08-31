@@ -76,6 +76,21 @@
         </div>
     </div>
 
+    <div id="editStudentModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Aluno</h2>
+            <form id="editStudentForm">
+                <input type="hidden" id="editStudentId">
+                <label for="editStudentName">Nome do Aluno:</label>
+                <input type="text" id="editStudentName" required>
+                <label for="editStudentIssue">Problema (opcional):</label>
+                <textarea id="editStudentIssue"></textarea>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
     <div id="editLessonModal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <button class="close" aria-label="Fechar modal">&times;</button>

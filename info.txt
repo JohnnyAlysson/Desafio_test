@@ -5,9 +5,10 @@ funcoes do projeto:
 
 bugs:
 1.ao adicionar as aulas a quantidade de aula e NaN ( bug RESOLVIDO trocandoa ID do formulario pois ela estava sendo utilizada em outro local tambem ,gerando conflito)
-2.nao ha verificacao para turmas com nome repetido 
-3. nao e possivel excluir aluno ou editar informacoes
+2.Nao ha verificacao para turmas com nome repetido (RESOLVIDO adicionando a verificao)
+3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos novo modal e respectivas funcoes)
 4.tab de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte)
-5.Falta as funcoes de contar e editar atrasados(verificar presencas)  dificuldades (contagem e listagem de dificuldades to do list?)
-6.Gerar relatorio turma? (final feature)
-7.Admin role?
+5.adicionar aulas extras? (necessario talvez nao? )
+6.Falta as funcoes de contar e editar atrasados(verificar presencas)  dificuldades (contagem e listagem de dificuldades to do list?)
+7.Gerar relatorio turma? (final feature)
+8.Admin role?
