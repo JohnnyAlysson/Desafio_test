@@ -4,6 +4,7 @@ import { closeModal } from './eventHandlers.js';
 import { elements } from './elements.js';
 
 
+
 export function editLesson(e) {
   e.preventDefault();
   if (!state.currentClass || state.currentLesson === null) return;

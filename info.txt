@@ -10,11 +10,12 @@ BACKLOG:
 3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos novo modal e respectivas funcoes)
 4.tab de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte)
 5.adicionar aulas extras? (necessario talvez nao? )
-6.Falta as funcoes de contar e editar atrasados(verificar presencas) (RESOLVIDO) 
+6.Falta as funcoes de contar e editar faltas(verificar presencas) (RESOLVIDO) 
 7. Melhorar UI do sistema de presencas(RESOLVIDO)
-8. Falta da funcao editar que gerava um erro ao tentar editar e salvar informacoes da aula
-8. Adicionar um numero na chamada para os alunos(auto?)
+8. Falta da funcao editar que gerava um erro ao tentar editar e salvar informacoes da aula(Resolvido modificando a funcao)
 7.dificuldades (contagem e listagem de dificuldades to do list?)
 8.Modulacao do codigo(RESOLVIDO separando responsabilidades e criando nova pasta)
+9. BUG ao excluir um aluno a contagem de presencas nao considera o lista atualizada
+8. Adicionar um numero na chamada para os alunos(auto?)
 9.Gerar relatorio turma? (final feature)
 10.Admin role?
