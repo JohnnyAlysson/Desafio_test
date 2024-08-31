@@ -9,6 +9,8 @@ bugs:
 3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos novo modal e respectivas funcoes)
 4.tab de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte)
 5.adicionar aulas extras? (necessario talvez nao? )
-6.Falta as funcoes de contar e editar atrasados(verificar presencas)  dificuldades (contagem e listagem de dificuldades to do list?)
-7.Gerar relatorio turma? (final feature)
-8.Admin role?
+6.Falta as funcoes de contar e editar atrasados(verificar presencas) (RESOLVIDO) 
+7.dificuldades (contagem e listagem de dificuldades to do list?)
+8.Modulacao do codigo
+9.Gerar relatorio turma? (final feature)
+10.Admin role?

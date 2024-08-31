@@ -1,3 +1,4 @@
+//OLD FILE DELETE LATER
 document.addEventListener('DOMContentLoaded', () => {
     const state = {
         classes: [
@@ -21,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lessonList: document.getElementById('lessonList'),
         addClassModal: document.getElementById('addClassModal'),
         addStudentModal: document.getElementById('addStudentModal'),
-        editLessonModal: document.getElementById('editLessonModal')
+        editLessonModal: document.getElementById('editLessonModal'),
+        editStudentModal: document.getElementById('editStudentModal')
     };
 
     function classNameExists(name) {
@@ -96,16 +98,52 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderStudents() {
         if (state.currentClass) {
             elements.studentList.innerHTML = state.currentClass.students.map(student => `
-                <li class="student-item">
+                <li class="student-item" data-student-id="${student.id}">
                     <div>
                         <strong>${student.name}</strong><br>
                         ${student.issue || 'Nenhum problema relatado'}
                     </div>
-                    <span class="expand-icon">↔</span>
+                    <div class="student-actions">
+                        <span class="edit-icon" title="Editar aluno">✏️</span>
+                        <span class="delete-icon" title="Excluir aluno">🗑️</span>
+                    </div>
                 </li>
             `).join('');
+            attachStudentListeners();
         } else {
             elements.studentList.innerHTML = '';
+        }
+    }
+
+    function attachStudentListeners() {
+        elements.studentList.querySelectorAll('.student-item').forEach(item => {
+            item.querySelector('.edit-icon').addEventListener('click', () => {
+                const studentId = parseInt(item.dataset.studentId);
+                openEditStudentModal(studentId);
+            });
+
+            item.querySelector('.delete-icon').addEventListener('click', () => {
+                const studentId = parseInt(item.dataset.studentId);
+                deleteStudent(studentId);
+            });
+        });
+    }
+
+    function deleteStudent(studentId) {
+        if (confirm('Tem certeza que deseja excluir este aluno?')) {
+            state.currentClass.students = state.currentClass.students.filter(student => student.id !== studentId);
+            renderStudents();
+            updateClassDetails();
+        }
+    }
+
+    function openEditStudentModal(studentId) {
+        const student = state.currentClass.students.find(s => s.id === studentId);
+        if (student) {
+            document.getElementById('editStudentName').value = student.name;
+            document.getElementById('editStudentIssue').value = student.issue || '';
+            document.getElementById('editStudentId').value = student.id;
+            openModal(elements.editStudentModal);
         }
     }
 
@@ -194,6 +232,21 @@ document.addEventListener('DOMContentLoaded', () => {
         updateClassDetails();
         closeModal(elements.addStudentModal);
         this.reset();
+    });
+
+    document.getElementById('editStudentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const studentId = parseInt(document.getElementById('editStudentId').value);
+        const name = document.getElementById('editStudentName').value;
+        const issue = document.getElementById('editStudentIssue').value;
+
+        const studentIndex = state.currentClass.students.findIndex(s => s.id === studentId);
+        if (studentIndex !== -1) {
+            state.currentClass.students[studentIndex] = { ...state.currentClass.students[studentIndex], name, issue };
+            renderStudents();
+            updateClassDetails();
+            closeModal(elements.editStudentModal);
+        }
     });
 
     document.getElementById('editLessonForm').addEventListener('submit', function(e) {
