@@ -1,7 +1,7 @@
 import { state, setState } from './state.js';
 import { elements } from './elements.js';
-import { renderClasses, updateClassDetails } from './render.js';
-import { deleteClass, addNewClass } from './classManagement.js';
+import { renderClasses, updateClassDetails, renderStudents, renderLessons } from './render.js';
+import { deleteClass, addNewClass, editLesson } from './classManagement.js';
 import { deleteStudent, editStudent, addNewStudent } from './studentManagement.js';
 import { toggleAttendance } from './attendanceManagement.js';
 
@@ -29,6 +29,7 @@ export function setupEventListeners() {
     document.getElementById('addClassForm').addEventListener('submit', addNewClass);
     document.getElementById('addStudentForm').addEventListener('submit', addNewStudent);
     document.getElementById('editStudentForm').addEventListener('submit', editStudent);
+    document.getElementById('editLessonForm').addEventListener('submit', editLesson);
 }
 
 export function attachClassListeners() {
@@ -59,7 +60,7 @@ export function attachStudentListeners() {
             deleteStudent(studentId);
         });
 
-        item.querySelectorAll('.attendance-checkboxes input').forEach((checkbox, index) => {
+        item.querySelectorAll('.attendance-checkbox input').forEach((checkbox, index) => {
             checkbox.addEventListener('change', () => {
                 toggleAttendance(parseInt(item.dataset.studentId), index);
             });
@@ -77,7 +78,7 @@ export function attachLessonListeners() {
     });
 }
 
-function openModal(modal) {
+export function openModal(modal) {
     modal.style.display = "block";
 }
 
@@ -95,8 +96,9 @@ function openEditStudentModal(studentId) {
     }
 }
 
-function openEditLessonModal() {
-    const lessonDetail = state.currentClass.lessonDetails[state.currentLesson] || { title: `Aula ${state.currentLesson + 1}`, observation: '' };
+export function openEditLessonModal() {
+    const lessonDetail = state.currentClass.lessonDetails[state.currentLesson] || 
+                         { title: `Aula ${state.currentLesson + 1}`, observation: '' };
     document.getElementById('lessonTitle').value = lessonDetail.title;
     document.getElementById('lessonObservation').value = lessonDetail.observation;
     openModal(elements.editLessonModal);

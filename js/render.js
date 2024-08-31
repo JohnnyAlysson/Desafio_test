@@ -78,7 +78,9 @@ export function updateClassDetails() {
 export function renderLessons() {
   if (state.currentClass) {
       elements.lessonList.innerHTML = Array.from({length: state.currentClass.lessons}, (_, i) => {
-          const lessonDetail = state.currentClass.lessonDetails[i] || { title: `Aula ${i + 1}`, observation: '' };
+          const lessonDetail = state.currentClass.lessonDetails && state.currentClass.lessonDetails[i] 
+              ? state.currentClass.lessonDetails[i] 
+              : { title: `Aula ${i + 1}`, observation: '' };
           return `
               <li class="lesson-item" data-lesson="${i}">
                   <div>

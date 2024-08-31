@@ -12,7 +12,7 @@ BACKLOG:
 5.adicionar aulas extras? (necessario talvez nao? )
 6.Falta as funcoes de contar e editar atrasados(verificar presencas) (RESOLVIDO) 
 7. Melhorar UI do sistema de presencas(RESOLVIDO)
-8. Ao salvar a aula a pagina recarrega
+8. Falta da funcao editar que gerava um erro ao tentar editar e salvar informacoes da aula
 8. Adicionar um numero na chamada para os alunos(auto?)
 7.dificuldades (contagem e listagem de dificuldades to do list?)
 8.Modulacao do codigo(RESOLVIDO separando responsabilidades e criando nova pasta)

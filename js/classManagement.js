@@ -1,7 +1,24 @@
 import { state, setState } from './state.js';
-import { renderClasses, updateClassDetails } from './render.js';
+import { renderClasses, updateClassDetails, renderLessons } from './render.js';
 import { closeModal } from './eventHandlers.js';
 import { elements } from './elements.js';
+
+
+export function editLesson(e) {
+  e.preventDefault();
+  if (!state.currentClass || state.currentLesson === null) return;
+  const title = document.getElementById('lessonTitle').value;
+  const observation = document.getElementById('lessonObservation').value;
+  
+  if (!state.currentClass.lessonDetails) {
+      state.currentClass.lessonDetails = [];
+  }
+  
+  state.currentClass.lessonDetails[state.currentLesson] = { title, observation };
+  setState(state);
+  renderLessons();
+  closeModal(elements.editLessonModal);
+}
 
 export function deleteClass(classId) {
     if (confirm(`Tem certeza que deseja excluir esta turma?`)) {
