@@ -1,3 +1,5 @@
+ARQUIVO DE NOTAS PESSOAIS POR FAVOR IGNORAR
+
 funcoes do projeto:
 
 1.Gerenciamento de turmas com quantidade de aulas e possibilidade de excluir
@@ -5,17 +7,17 @@ funcoes do projeto:
 
 BACKLOG:
 
-1.ao adicionar as aulas a quantidade de aula e NaN ( bug RESOLVIDO trocandoa ID do formulario pois ela estava sendo utilizada em outro local tambem ,gerando conflito)
+1.ao adicionar as aulas a quantidade de aula era mostrada como NaN ( bug RESOLVIDO trocandoa ID do formulario pois ela estava sendo utilizada em outra funcao tambem ,gerando conflito)
 2.Nao ha verificacao para turmas com nome repetido (RESOLVIDO adicionando a verificao)
-3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos novo modal e respectivas funcoes)
-4.tab de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte)
-5.adicionar aulas extras? (necessario talvez nao? )
+3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos como novo modal e respectivas funcoes)
+4.navegacao de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte e estilos)
 6.Falta as funcoes de contar e editar faltas(verificar presencas) (RESOLVIDO) 
 7. Melhorar UI do sistema de presencas(RESOLVIDO)
-8. Falta da funcao editar que gerava um erro ao tentar editar e salvar informacoes da aula(Resolvido modificando a funcao)
-7.dificuldades (contagem e listagem de dificuldades to do list?)
+8. Falta da funcao editar aulas o que gerava um erro ao tentar editar e salvar informacoes da aula, pagina recarregava(Resolvido modificando a funcao)
+7.dificuldades (contagem e listagem de dificuldades ao estilo to do list?)(resolvido funcao implementada)
 8.Modulacao do codigo(RESOLVIDO separando responsabilidades e criando nova pasta)
-9. BUG ao excluir um aluno a contagem de presencas nao considera o lista atualizada
-8. Adicionar um numero na chamada para os alunos(auto?)
-9.Gerar relatorio turma? (final feature)
-10.Admin role?
+9. BUG ao excluir um aluno a contagem de presencas nao considera o lista atualizada (relacinado com outra funcao, ja corrigido)
+8. Adicionar um numero na chamada para os alunos(auto?) (sugestao de proximas implementacoes talvez nao necessario ja que ja existe um ID para cada aluno)
+9.Gerar relatorio turma? (final feature)(sugestao de proximas implementacoes) adicionar feature para gera um relatorio com grafico e filtros para melhor visualizacao
+5.adicionar aulas extras? (necessario talvez nao? ) (sugestao de proximas implementacoes) possibilidade de adicionar aulas extra caso necessario
+10.Admin role? (sugestao de proximas implementacoes) adicionar funcoes d e admin e de usuario com diferentes reponsabilidade
