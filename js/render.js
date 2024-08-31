@@ -20,31 +20,37 @@ export function renderClasses() {
 }
 
 export function renderStudents() {
-    if (state.currentClass) {
-        elements.studentList.innerHTML = state.currentClass.students.map(student => `
-            <li class="student-item" data-student-id="${student.id}">
-                <div>
-                    <strong>${student.name}</strong><br>
-                    ${student.issue || 'Nenhum problema relatado'}
-                </div>
-                <div class="attendance-checkboxes">
-                    ${Array.from({length: state.currentClass.lessons}, (_, i) => `
-                        <input type="checkbox" 
-                               id="attendance-${student.id}-${i}" 
-                               ${student.attendance && student.attendance[i] ? 'checked' : ''}
-                               onchange="toggleAttendance(${student.id}, ${i})">
-                    `).join('')}
-                </div>
-                <div class="student-actions">
-                    <span class="edit-icon" title="Editar aluno">✏️</span>
-                    <span class="delete-icon" title="Excluir aluno">🗑️</span>
-                </div>
-            </li>
-        `).join('');
-        attachStudentListeners();
-    } else {
-        elements.studentList.innerHTML = '';
-    }
+  if (state.currentClass) {
+      elements.studentList.innerHTML = state.currentClass.students.map(student => `
+          <li class="student-item" data-student-id="${student.id}">
+              <div class="student-info">
+                  <strong>${student.name}</strong><br>
+                  ${student.issue || 'Nenhum problema relatado'}
+              </div>
+              <div class="attendance-container">
+                  <span class="attendance-label">Presenças:</span>
+                  <div class="attendance-checkboxes">
+                      ${Array.from({length: state.currentClass.lessons}, (_, i) => `
+                          <div class="attendance-checkbox">
+                              <input type="checkbox" 
+                                     id="attendance-${student.id}-${i}" 
+                                     ${student.attendance && student.attendance[i] ? 'checked' : ''}
+                                     onchange="toggleAttendance(${student.id}, ${i})">
+                              <label for="attendance-${student.id}-${i}" title="Aula ${i + 1}">${i + 1}</label>
+                          </div>
+                      `).join('')}
+                  </div>
+              </div>
+              <div class="student-actions">
+                  <span class="edit-icon" title="Editar aluno">✏️</span>
+                  <span class="delete-icon" title="Excluir aluno">🗑️</span>
+              </div>
+          </li>
+      `).join('');
+      attachStudentListeners();
+  } else {
+      elements.studentList.innerHTML = '';
+  }
 }
 
 export function updateClassDetails() {

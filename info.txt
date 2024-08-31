@@ -3,14 +3,18 @@ funcoes do projeto:
 1.Gerenciamento de turmas com quantidade de aulas e possibilidade de excluir
 
 
-bugs:
+BACKLOG:
+
 1.ao adicionar as aulas a quantidade de aula e NaN ( bug RESOLVIDO trocandoa ID do formulario pois ela estava sendo utilizada em outro local tambem ,gerando conflito)
 2.Nao ha verificacao para turmas com nome repetido (RESOLVIDO adicionando a verificao)
 3. nao e possivel excluir aluno ou editar informacoes ( RESOLVIDO adicionando elementos novo modal e respectivas funcoes)
 4.tab de aula e alunos tem baixa visibilidade (mudar cor da fonte?) (RESOLVIDO mundando a cor da fonte)
 5.adicionar aulas extras? (necessario talvez nao? )
 6.Falta as funcoes de contar e editar atrasados(verificar presencas) (RESOLVIDO) 
+7. Melhorar UI do sistema de presencas(RESOLVIDO)
+8. Ao salvar a aula a pagina recarrega
+8. Adicionar um numero na chamada para os alunos(auto?)
 7.dificuldades (contagem e listagem de dificuldades to do list?)
-8.Modulacao do codigo
+8.Modulacao do codigo(RESOLVIDO separando responsabilidades e criando nova pasta)
 9.Gerar relatorio turma? (final feature)
 10.Admin role?
