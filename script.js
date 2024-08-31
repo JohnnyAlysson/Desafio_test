@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         editLessonModal: document.getElementById('editLessonModal')
     };
 
+    function classNameExists(name) {
+        return state.classes.some(cls => cls.name.toLowerCase() === name.toLowerCase());
+    }
+
     function renderClasses() {
         elements.classList.innerHTML = state.classes.map(cls => `
             <li class="class-item ${state.currentClass === cls ? 'selected' : ''}" data-class-id="${cls.id}">
@@ -150,16 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(elements.editLessonModal);
     }
 
-    //adicionar lesson
     document.getElementById('addClassForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('className').value;
         let numberOfLessons = document.getElementById('numeroDeAulas');
-        //  let acima pega o span eu alterei o nome do ID
-        let lessons = numberOfLessons.value;
+        let lessons = parseInt(numberOfLessons.value);
         
-        console.log(numberOfLessons)
-        console.log(lessons)
+        if (classNameExists(name)) {
+            alert('Já existe uma turma com esse nome. Por favor, escolha um nome diferente.');
+            return;
+        }
+        
         const newClass = { 
             id: Date.now(), 
             name, 
@@ -176,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal(elements.addClassModal);
         this.reset();
         
-        // Forçar a exibição da aba de aulas
         document.querySelector('.tab[data-tab="lessons"]').click();
     });
 
@@ -223,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Inicialização
     renderClasses();
     updateClassDetails();
 });
