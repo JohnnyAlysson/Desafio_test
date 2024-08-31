@@ -93,7 +93,7 @@ body {
 
 button {
     background-color: var(--primary-color);
-    color: white;
+    color: --text-color;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;

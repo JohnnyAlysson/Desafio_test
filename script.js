@@ -150,10 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(elements.editLessonModal);
     }
 
+    //adicionar lesson
     document.getElementById('addClassForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('className').value;
-        const lessons = parseInt(document.getElementById('classLessons').value);
+        let numberOfLessons = document.getElementById('numeroDeAulas');
+        //  let acima pega o span eu alterei o nome do ID
+        let lessons = numberOfLessons.value;
+        
+        console.log(numberOfLessons)
+        console.log(lessons)
         const newClass = { 
             id: Date.now(), 
             name, 
