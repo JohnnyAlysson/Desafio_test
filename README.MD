@@ -78,6 +78,7 @@ O Sistema de Acompanhamento de Alunos é uma aplicação web projetada para ajud
 3. Adicionar funcionalidade para incluir aulas extras, se necessário.
 4. Implementar roles de admin e usuário com diferentes responsabilidades.
 5. Adicionar local storage como exemplo para futuras implementações com banco de dados.
+6. Corrigir problema de descrição de cada aluno, dado é salvo, mas não exibido.
 
 ## Como Usar
 
